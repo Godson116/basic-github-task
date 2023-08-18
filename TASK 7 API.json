@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "52101fc6-4ff6-4f9d-8345-c87a9614c9d4",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29190941"
+	},
+	"item": [
+		{
+			"name": "API LESSSON 7 TASK",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});",
+							"var jsonData = pm.response.json();",
+							"console.log(jsonData.collection.info)",
+							"",
+							"pm.test(\"Verifying for _postman_id\", function () {  ",
+							"    pm.expect(jsonData.collection.info._postman_id).to.eql(\"8ed1a723-7194-4433-9aef-352e9b86d1e0\");",
+							"});",
+							"pm.test(\"verifying for name\", function () {",
+							"    pm.expect(jsonData.collection.info.name).to.eql(\"STSTStudentCourse\");",
+							"",
+							"});",
+							"pm.test(\"verifying for schema\", function () {",
+							"    pm.expect(jsonData.collection.info.schema).to.eql(\"https://schema.getpostman.com/json/collection/v2.1.0/collection.json\");",
+							"});",
+							"pm.test(\"verifying for updatedAt\", function () {",
+							"    pm.expect(jsonData.collection.info.updatedAt).to.eql(\"2023-06-28T09:08:14.000Z\");",
+							"});",
+							"pm.test(\"verifying for uid\", function () {",
+							"    pm.expect(jsonData.collection.info.uid).to.eql(\"3865219-8ed1a723-7194-4433-9aef-352e9b86d1e0\");",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"collection\");",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"info\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.postman.com/collections/3865219-8ed1a723-7194-4433-9aef-352e9b86d1e0?access_key=PMAT-01H40M7GCGGGYX7EFK4BFTRHZX",
+					"protocol": "https",
+					"host": [
+						"api",
+						"postman",
+						"com"
+					],
+					"path": [
+						"collections",
+						"3865219-8ed1a723-7194-4433-9aef-352e9b86d1e0"
+					],
+					"query": [
+						{
+							"key": "access_key",
+							"value": "PMAT-01H40M7GCGGGYX7EFK4BFTRHZX"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
